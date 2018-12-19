@@ -144,7 +144,7 @@ module.exports = function (options) {
     function * setCache(ctx, key, tKey, expire) {
         let body = ctx.response.body;
 
-        if ((ctx.request.method !== 'GET') || (ctx.response.status !== 200) || !body) {
+        if ((ctx.request.method !== 'GET') || (ctx.response.status !== 200) || !body || body.status !== 200) {
             return
         }
 
