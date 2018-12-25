@@ -49,7 +49,7 @@ module.exports = function (options) {
         const resolvedPrefix = typeof prefix === 'function' ? prefix.call(ctx, ctx) : prefix;
         const dumpPrefix = resolvedPrefix + '_dump_';
         const isDump = isBackup && (typeof checkDump === 'function') ? checkDump.call(ctx, ctx) : false;
-        const key = resolvedPrefix + url + ctx.headers.country + ctx.headers.language;
+        const key = resolvedPrefix + url;
         const dumpKey = dumpPrefix + url;
         const tKey = key + ':type';
         const tDumpKey = dumpKey + ':type';
